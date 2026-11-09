@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeployFlow — Автоматический деплой с GitHub Actions</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">Deploy<span>Flow</span></a>
+      <nav class="nav">
+        <a href="#features">Возможности</a>
+        <a href="#how">Как это работает</a>
+        <a href="#cta">Начать</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <div class="badge">CI/CD из коробки</div>
+        <h1>Автоматический деплой<br>за <span class="gradient">один push</span></h1>
+        <p class="hero__text">
+          Настройте GitHub Actions один раз — и ваш сайт будет обновляться автоматически при каждом изменении кода. Без ручной загрузки файлов.
+        </p>
+        <div class="hero__actions">
+          <a href="#cta" class="btn btn--primary">Попробовать бесплатно</a>
+          <a href="#how" class="btn btn--ghost">Как это работает</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="code-window">
+          <div class="code-window__bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="code-window__title">deploy.yml</span>
+          </div>
+          <pre class="code-window__body"><code><span class="kw">name:</span> Deploy static site
+
+<span class="kw">on:</span>
+  <span class="kw">push:</span>
+    <span class="kw">branches:</span> [ main ]
+
+<span class="kw">jobs:</span>
+  <span class="fn">deploy:</span>
+    <span class="kw">runs-on:</span> ubuntu-latest
+    <span class="kw">steps:</span>
+      - <span class="kw">uses:</span> actions/checkout@v4
+      - <span class="kw">uses:</span> actions/deploy-pages@v4</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="section-title">Почему DeployFlow</h2>
+      <p class="section-subtitle">Всё, что нужно для современного CI/CD-пайплайна</p>
+      <div class="features__grid">
+        <div class="feature-card">
+          <div class="feature-card__icon">⚡</div>
+          <h3>Мгновенный деплой</h3>
+          <p>После push сайт обновляется за 30–60 секунд. Никаких ручных действий.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">🔒</div>
+          <h3>Безопасность</h3>
+          <p>Secrets, права доступа и защищённые переменные окружения из коробки.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">🧩</div>
+          <h3>Гибкость</h3>
+          <p>Добавляйте линтинг, тесты и сборку — workflow легко расширяется.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">🌐</div>
+          <h3>GitHub Pages</h3>
+          <p>Бесплатный хостинг статических сайтов прямо из вашего репозитория.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how" id="how">
+    <div class="container">
+      <h2 class="section-title">Как это работает</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">01</div>
+          <h3>Создайте репозиторий</h3>
+          <p>Добавьте HTML, CSS и файл <code>.github/workflows/deploy.yml</code></p>
+        </div>
+        <div class="step">
+          <div class="step__num">02</div>
+          <h3>Включите GitHub Pages</h3>
+          <p>В настройках репозитория выберите источник — GitHub Actions</p>
+        </div>
+        <div class="step">
+          <div class="step__num">03</div>
+          <h3>Сделайте push</h3>
+          <p>Workflow запустится автоматически и опубликует сайт</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="cta">
+    <div class="container cta__inner">
+      <h2>Готовы автоматизировать деплой?</h2>
+      <p>Создайте репозиторий, добавьте workflow и забудьте про ручную публикацию.</p>
+      <a href="https://github.com/new" class="btn btn--primary btn--lg" target="_blank">Создать репозиторий на GitHub</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="logo">Deploy<span>Flow</span></div>
+      <p>Лабораторная работа №6 · GitHub Actions CI/CD · 2026</p>
+    </div>
+  </footer>
+</body>
+</html>
